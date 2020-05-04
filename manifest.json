@@ -1,0 +1,22 @@
+{
+    "manifest_version": 2,
+
+    "name": "Trails",
+    "version": "1.0",
+    "description": "A map of your browser history.",
+
+    "permissions": ["activeTab", "history", "storage"],
+    "background": {
+      "scripts": ["background.js"],
+      "persistent": false
+    },
+    "browser_action": {
+    },
+    "content_scripts": [
+        {
+            "matches": ["http://*/*", "https://*/*"],
+            "js": ["contentscript.js"]
+        }
+    ],
+    "web_accessible_resources": ["popup.html"]
+}
